@@ -1,0 +1,33 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+</head>
+
+<body>
+    <p>
+        Dear Team,
+        SFTP file have been generated and now available in SFTP.<br>
+        Please find the details of today's generated data.
+        <br/>
+        <br/>
+    <table cellspacing="3" bgcolor="#000000">
+        <tr bgcolor="#ffffff">
+            <th>File </th>
+            <th>Succees</th>
+            <th>Error</th>
+            <th>Total</th>
+        </tr>
+        {{range $key, $value := .}}
+        <tr bgcolor="#ffffff">
+                <td style="padding: 2px;">{{$value.FileName}}</td>
+                <td style="padding: 2px;">{{$value.SuccessCount}}</td>
+                <td style="padding: 2px;">{{$value.ErrorCount}}</td>
+                <td style="padding: 2px;">{{$value.TotalCount}}</td>
+        </tr>    
+        {{end}}
+    </table>
+    </p>
+</body>
+
+</html>
